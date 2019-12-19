@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
-    PowerSqr = list(map(lambda x: list(map(lambda y: y**2, x)), matrix))
-    return PowerSqr
+    return list(map(lambda x: list(map(lambda y: y**2, x)), matrix))
