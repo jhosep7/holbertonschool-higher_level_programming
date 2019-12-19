@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    for Key, Value in a_dictionary.items():
-        Key: Value * 2
-    return a_dictionary
+    CpyDict = {key: value * 2 for key, value in a_dictionary.items()}
+    return CpyDict
