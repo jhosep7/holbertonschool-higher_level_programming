@@ -7,6 +7,7 @@ class Node:
     @property
     def data(self):
         return (self.__data)
+
     @data.setter
     def data(self, value):
         if type(value) != int:
@@ -17,36 +18,38 @@ class Node:
     @property
     def next_node(self):
         return (self.__next_node)
+
     @next_node.setter
     def next_node(self, value):
-        if value == None:
+        if value is None:
             self.__next_node = value
         elif isinstance(value, Node):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     def __init__(self):
         self.__head = None
 
     def sorted_insert(self, value):
-        if self.__head == None or value < self.__head.data:
+        if self.__head is None or value < self.__head.data:
             self.__head = Node(value, self.__head)
             return
         Temp = self.__head
-        while Temp.next_node != None and Temp.next_node.data < value:
+        while Temp.next_node is not None and Temp.next_node.data < value:
             Temp = Temp.next_node
         Temp.next_node = Node(value, Temp.next_node)
 
     def __repr__(self):
-        if self.__head == None:
+        if self.__head is None:
             return (" ")
         MyArr = ""
         Temp = self.__head
         while (Temp):
             MyArr += repr(Temp.data)
             Temp = Temp.next_node
-            if Temp != None:
+            if Temp is not None:
                 MyArr += "\n"
         return (MyArr)
