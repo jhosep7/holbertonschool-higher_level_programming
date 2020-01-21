@@ -1,0 +1,27 @@
+>>> base_geometry = __import__("7-base_geometry").BaseGeometry
+>>> ar = base_geometry()
+
+>>> ar.area(70)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> ar.integer_validator("Hello", -570.74)
+Traceback (most recent call last):
+...
+TypeError: Hello must be an integer
+
+>>> ar.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> ar.integer_validator("validator")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> ar.integer_validator("validator", 2, 2)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
