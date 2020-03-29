@@ -19,4 +19,3 @@ if __name__ == "__main__":
             Sect2.delete(i)
         Sect2.commit()
     Sect2.close()
-    Sect2.close()
