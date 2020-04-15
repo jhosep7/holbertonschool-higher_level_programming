@@ -3,6 +3,7 @@
 from urllib import request, parse
 import sys
 
-Info = parse.urlencode({'email': sys.argv[2]}).encode()
-with request.urlopen(sys.argv[1], Info) as Peer:
-    print(Peer.read().decode('utf-8'))
+if __name__ == "__main__":
+    Info = parse.urlencode({'email': sys.argv[2]}).encode()
+    with request.urlopen(sys.argv[1], Info) as Peer:
+        print(Peer.read().decode('utf-8'))
