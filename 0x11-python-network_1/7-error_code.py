@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" send request """
-from sys import argv
+""" 7-error_code.py """
 import requests
+from sys import argv
+
 
 if __name__ == "__main__":
     R1 = requests.get(argv[1])
@@ -9,4 +10,4 @@ if __name__ == "__main__":
     if code > 400:
         print("Error code: {}".format(code))
     else:
-        print(R1.text)
+        print(reply.text)
