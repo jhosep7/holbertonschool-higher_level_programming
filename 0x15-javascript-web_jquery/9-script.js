@@ -1,3 +1,5 @@
-document.addEventListener('DOMContentLoaded', () =>
-  $.get('https://fourtonfish.com/hellosalut/?lang=fr', data =>
-    $('DIV#hello').text(data.hello)));
+$.ajax({
+  type: 'GET',
+  url: 'https://fourtonfish.com/hellosalut/?lang=fr',
+  success: function (fish) {$('#hello').append(fish.hello); }
+});
